@@ -16,16 +16,20 @@
   </div>
 
   <script type="text/javascript">
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/Brazil/aExlnWKmFX',
-      headers: {
-        'X-Parse-Application-Id': 'O7UgclvXnpbgUvWlS7bZVcFxEbFlBjJjssekCJof',
-        'X-Parse-REST-API-Key': 'ph9GHAWIoO23oJ3nZJiZheKpbZtmxzDyYjrqSzIw'
-      }
-    }).done(function(data) {
-      $('#claimed').toggle(data.claimed);
-      $('#unclaimed').toggle(!data.claimed);
-    });
+    setInterval(checkClaim, 15 * 1000);
+
+    function checkClaim() {
+      $.ajax({
+        url: 'https://api.parse.com/1/classes/Brazil/aExlnWKmFX',
+        headers: {
+          'X-Parse-Application-Id': 'O7UgclvXnpbgUvWlS7bZVcFxEbFlBjJjssekCJof',
+          'X-Parse-REST-API-Key': 'ph9GHAWIoO23oJ3nZJiZheKpbZtmxzDyYjrqSzIw'
+        }
+      }).done(function(data) {
+        $('#claimed').toggle(data.claimed);
+        $('#unclaimed').toggle(!data.claimed);
+      });
+    }
   </script>
 </body>
 
