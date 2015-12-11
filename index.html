@@ -8,14 +8,17 @@
 <body>
 
   <div id='claimed' hidden=true>
+    <h1>Wait...</h1>
     <img src='http://api.ning.com/files/sbS3oDiupKCL8J-S6YKgMfavUz1Wa4*dkIRd9xeT0JjkTHHqN91u1P7JaeKnE7cQAWJphbYm13AvepWRUTl0Kjn2SYkVDl4P/occupiedjpg.jpg'>
   </div>
 
   <div id='unclaimed' hidden=true>
+    <h1>Go for it!</h1>
     <img src='http://p1cdn3static.sharpschool.com/UserFiles/Servers/Server_880738/Image/Sambus/Social%20Studies/Brazil/Brazil.png'>
   </div>
 
   <script type="text/javascript">
+    checkClaim();
     setInterval(checkClaim, 15 * 1000);
 
     function checkClaim() {
