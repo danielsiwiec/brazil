@@ -1,0 +1,32 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id='claimed' hidden=true>
+    <img src='http://api.ning.com/files/sbS3oDiupKCL8J-S6YKgMfavUz1Wa4*dkIRd9xeT0JjkTHHqN91u1P7JaeKnE7cQAWJphbYm13AvepWRUTl0Kjn2SYkVDl4P/occupiedjpg.jpg'>
+  </div>
+
+  <div id='unclaimed' hidden=true>
+    <img src='http://p1cdn3static.sharpschool.com/UserFiles/Servers/Server_880738/Image/Sambus/Social%20Studies/Brazil/Brazil.png'>
+  </div>
+
+  <script type="text/javascript">
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/Brazil/aExlnWKmFX',
+      headers: {
+        'X-Parse-Application-Id': 'O7UgclvXnpbgUvWlS7bZVcFxEbFlBjJjssekCJof',
+        'X-Parse-REST-API-Key': 'ph9GHAWIoO23oJ3nZJiZheKpbZtmxzDyYjrqSzIw'
+      }
+    }).done(function(data) {
+      $('#claimed').toggle(data.claimed);
+      $('#unclaimed').toggle(!data.claimed);
+    });
+  </script>
+</body>
+
+</html>
